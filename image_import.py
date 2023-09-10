@@ -30,14 +30,24 @@ The cv2.imread() function return a NumPy array if the image is loaded successful
 # cv2.destroyAllWindows()
 
 # Activity 3: detecting the colors in an image
-# image3 = cv2.imread("rgb.png", 1)
-# B, G, R = cv2.split(image3)
-# cv2.imshow("blue", B)
-# cv2.waitKey(0)
-# cv2.imshow("green", G)
-# cv2.waitKey(0)
-# cv2.imshow("red", R)
-# cv2.waitKey(0)
+image3 = cv2.imread("galaxy2.jpg", 1)
+image3 = cv2.resize(image3, (300, 300))
+cv2.imshow("original", image3)
+print(image3[0])
+print("\n")
+print(image3[1])
+print("\n")
+print(image3[2])
+print("\n")
+print(image3[3])
+B, G, R = cv2.split(image3)
+
+cv2.imshow("blue", B)
+cv2.waitKey(0)
+cv2.imshow("green", G)
+cv2.waitKey(0)
+cv2.imshow("red", R)
+cv2.waitKey(0)
 
 # Activity 4: adding, subtracting and weighted addition of two images
 # image4 = cv2.imread("galaxy1.jpg")
@@ -58,18 +68,28 @@ The cv2.imread() function return a NumPy array if the image is loaded successful
 
 
 # Activity 4: Resizing of image and adding/subtracting
-image8 = cv2.imread("person2.png")
-image9 = cv2.imread("black.jpg")
-height1, width1 = image8.shape[0:2]
-print(f"Person--- Height:{height1}, Width:{width1}")
-height2, width2 = image9.shape[0:2]
-print(f"Background--- Height:{height2}, Width:{width2}")
-image10 = cv2.resize(image8, (194, 194))
-height3, width3 = image10.shape[0:2]
-print(f"Person resized--- Height:{height3}, Width:{width3}")
-image11 = cv2.resize(image9, (194, 194))
-cv2.imshow("black background", image11)
-person_bg = cv2.add(image10, image11)
-# person_bg = cv2.addWeighted(image10, 0.3, image11, 1, 0)
-cv2.imshow("Addition of person", person_bg)
-cv2.waitKey(0)
+# image8 = cv2.imread("india_2.jpeg")
+# image9 = cv2.imread("galaxy2.jpg")
+# # height1, width1 = image8.shape[0:2]
+# # print(f"Person--- Height:{height1}, Width:{width1}")
+# # height2, width2 = image9.shape[0:2]
+# # print(f"Background--- Height:{height2}, Width:{width2}")
+# image10 = cv2.resize(image8, (500, 250))
+# # height3, width3 = image10.shape[0:2]
+# # print(f"Person resized--- Height:{height3}, Width:{width3}")
+# # image11 = cv2.resize(image9, (194, 194))
+# # cv2.imshow("black background", image11)
+# # person_bg = cv2.add(image10, image9)
+# person_bg = cv2.addWeighted(image10, 1, image9, 1, 0)
+# cv2.imshow("Addition of indian olympiad team 1/1", person_bg)
+# person_bg = cv2.addWeighted(image10, 0.1, image9, 1, 0)
+# cv2.imshow("Addition of indian olympiad team 0.1/1", person_bg)
+# person_bg = cv2.addWeighted(image10, 0.5, image9, 1, 0)
+# cv2.imshow("Addition of indian olympiad team 0.5/1", person_bg)
+# person_bg = cv2.addWeighted(image10, 0.1, image9, 0.1, 0)
+# cv2.imshow("Addition of indian olympiad team 0.1/0.1", person_bg)
+# person_bg = cv2.addWeighted(image10, 0.5, image9, 0.5, 0)
+# cv2.imshow("Addition of indian olympiad team 0.5/0.5", person_bg)
+# person_bg = cv2.addWeighted(image10, 1, image9, 0.1, 0)
+# cv2.imshow("Addition of indian olympiad team 1/0.1", person_bg)
+# cv2.waitKey(0)
